@@ -5,6 +5,11 @@
   "displayName": "Hapi.js Snippets",
   "description": "Hapi.js Snippets for Javascript ES6",
   "license": "See License in LICENSE.md",
+  "icon": "images/hapijs-logo.png",
+  "galleryBanner": {
+    "color": "#ba6907",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/deerawan/vscode-hapijs-snippets"
