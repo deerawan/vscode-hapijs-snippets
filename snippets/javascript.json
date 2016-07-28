@@ -1,7 +1,7 @@
 {
   "require": {
     "prefix": "hp-req",
-    "description": "Hapi.js require",
+    "description": "Hapi.js Require",
     "body": "const Hapi = require('hapi');"
   },
   "new": {
@@ -14,8 +14,8 @@
     "description": "Hapi.js Server Connection",
     "body": [
       "server.connection({",
-      "\thost: '${localhost}',",
-      "\tport: ${8000}",
+      "\thost: '${host}',",
+      "\tport: ${port}",
       "});"
     ]
   },
@@ -26,7 +26,7 @@
       "server.start((err) => {",
       "\tif (err) {",
       "\t\tthrow err;",
-      "}",
+      "\t}",
       "\tconsole.log('Server running at ' + server.info.uri);",
       "});"
     ]
@@ -45,7 +45,7 @@
     ]
   },
   "server register one plugin": {
-    "prefix": "hp-plugone",
+    "prefix": "hp-plug-one",
     "description": "Hapi.js Load One Plugin",
     "body": [
       "server.register(require('${plugin}'), (err) => {",
@@ -56,12 +56,12 @@
     ]
   },
   "server register multiple plugin": {
-    "prefix": "hp-plugmulti",
-    "description": "Hapi.js Load One Plugin",
+    "prefix": "hp-plug-multi",
+    "description": "Hapi.js Load Multiple Plugin",
     "body": [
-      "server.register([require('${plugin}'), require('${plugin2}')], (err) => {",
+      "server.register([require('${plugin1}'), require('${plugin2}')], (err) => {",
       "\tif (err) {",
-      "\t\tconsole.error('Failed to load plugin:', err);",
+      "\t\tconsole.error('Failed to load plugins:', err);",
       "\t}",
       "});"
     ]
