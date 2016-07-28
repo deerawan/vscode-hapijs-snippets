@@ -1,0 +1,44 @@
+{
+  "require": {
+    "prefix": "hpreq",
+    "description": "Hapi.js require",
+    "body": "var Hapi = require('hapi');"
+  },
+  "new": {
+    "prefix": "hpnew",
+    "description": "Hapi.js new",
+    "body": "var server = new Hapi.Server();"
+  },
+  "server connection": {
+    "prefix": "hpconn",
+    "description": "Hapi.js Server Connection",
+    "body": [
+      "server.connection({",
+      "\thost: '${host}',",
+      "\tport: ${port}",
+      "});"
+    ]
+  },
+  "server start": {
+    "prefix": "hpstart",
+    "description": "Hapi.js Server Start",
+    "body": [
+      "server.start(() => {",
+      "\tconsole.log('Listening on ' + server.info.uri);",
+      "});"
+    ]
+  },
+  "server route": {
+    "prefix": "hproute",
+    "description": "Hapi.js Server Route",
+    "body": [
+      "server.route({",
+      "\tpath: '${path}',",
+      "\tmethod: '${method}',",
+      "\thandler: (request, reply) => {",
+      "\t\t${content}",
+      "\t}",
+      "});"
+    ]
+  }
+}
