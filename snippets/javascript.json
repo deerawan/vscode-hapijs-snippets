@@ -1,42 +1,67 @@
 {
   "require": {
-    "prefix": "hpreq",
+    "prefix": "hp-req",
     "description": "Hapi.js require",
-    "body": "var Hapi = require('hapi');"
+    "body": "const Hapi = require('hapi');"
   },
   "new": {
-    "prefix": "hpnew",
+    "prefix": "hp-new",
     "description": "Hapi.js new",
-    "body": "var server = new Hapi.Server();"
+    "body": "const server = new Hapi.Server();"
   },
   "server connection": {
-    "prefix": "hpconn",
+    "prefix": "hp-conn",
     "description": "Hapi.js Server Connection",
     "body": [
       "server.connection({",
-      "\thost: '${host}',",
-      "\tport: ${port}",
+      "\thost: '${localhost}',",
+      "\tport: ${8000}",
       "});"
     ]
   },
   "server start": {
-    "prefix": "hpstart",
+    "prefix": "hp-start",
     "description": "Hapi.js Server Start",
     "body": [
-      "server.start(() => {",
-      "\tconsole.log('Listening on ' + server.info.uri);",
+      "server.start((err) => {",
+      "\tif (err) {",
+      "\t\tthrow err;",
+      "}",
+      "\tconsole.log('Server running at ' + server.info.uri);",
       "});"
     ]
   },
   "server route": {
-    "prefix": "hproute",
+    "prefix": "hp-route",
     "description": "Hapi.js Server Route",
     "body": [
       "server.route({",
-      "\tpath: '${path}',",
-      "\tmethod: '${method}',",
+      "\tpath: '${/path}',",
+      "\tmethod: '${GET}',",
       "\thandler: (request, reply) => {",
-      "\t\t${content}",
+      "\t\treply(${response});",
+      "\t}",
+      "});"
+    ]
+  },
+  "server register one plugin": {
+    "prefix": "hp-plugone",
+    "description": "Hapi.js Load One Plugin",
+    "body": [
+      "server.register(require('${plugin}'), (err) => {",
+      "\tif (err) {",
+      "\t\tconsole.error('Failed to load plugin:', err);",
+      "\t}",
+      "});"
+    ]
+  },
+  "server register multiple plugin": {
+    "prefix": "hp-plugmulti",
+    "description": "Hapi.js Load One Plugin",
+    "body": [
+      "server.register([require('${plugin}'), require('${plugin2}')], (err) => {",
+      "\tif (err) {",
+      "\t\tconsole.error('Failed to load plugin:', err);",
       "\t}",
       "});"
     ]
