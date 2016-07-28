@@ -17,6 +17,6 @@ Type part of a snippet, press `enter` or `tab`
 | `hp-conn`                   | connection |
 | `hp-start`                  | start |
 | `hp-route`                  | route |
-| `hp-plug-on`                | register one plugin |
+| `hp-plug-one`                | register one plugin |
 | `hp-plug-multi`             | register two plugins |
 
