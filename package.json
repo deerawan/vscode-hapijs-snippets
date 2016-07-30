@@ -1,7 +1,7 @@
 {
   "name": "vscode-hapijs-snippets",
   "publisher": "deerawan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Hapi.js Snippets",
   "description": "Hapi.js Snippets for Javascript ES6",
   "license": "See License in LICENSE.md",
