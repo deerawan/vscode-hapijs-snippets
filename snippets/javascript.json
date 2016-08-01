@@ -19,6 +19,15 @@
       "});"
     ]
   },
+  "server ext": {
+    "prefix": "hp-ext",
+    "description": "Hapi.js Server Extension",
+    "body": [
+      "server.ext('${event}', (request, reply) => {",
+      "\treply.continue();",
+      "});"
+    ]
+  },
   "server start": {
     "prefix": "hp-start",
     "description": "Hapi.js Server Start",
@@ -63,6 +72,18 @@
       "\tif (err) {",
       "\t\tconsole.error('Failed to load plugins:', err);",
       "\t}",
+      "});"
+    ]
+  },
+  "server views": {
+    "prefix": "hp-view",
+    "description": "Hapi.js Views",
+    "body": [
+      "server.views({",
+      "\tengines: {",
+      "\t\thtml: ${html}",
+      "\t},",
+      "\tpath: '${path}'",
       "});"
     ]
   }
