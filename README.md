@@ -17,8 +17,10 @@ Type part of a snippet, press `enter` or `tab`
 | `hp-req`                    | require hapi |
 | `hp-new`                    | create new server |
 | `hp-conn`                   | connection |
+| `hp-ext`                    | extension |
 | `hp-start`                  | start |
 | `hp-route`                  | route |
 | `hp-plug-one`               | register one plugin |
 | `hp-plug-multi`             | register two plugins |
+| `hp-view`                   | views |
 
