@@ -28,6 +28,11 @@
       "});"
     ]
   },
+  "server method": {
+    "prefix": "hp-meth",
+    "description": "Hapi.js Server Methods",
+    "body": "server.method('${name}', ${method}, {});"
+  },
   "server start": {
     "prefix": "hp-start",
     "description": "Hapi.js Server Start",
@@ -39,6 +44,11 @@
       "\tconsole.log('Server running at ' + server.info.uri);",
       "});"
     ]
+  },
+  "server state": {
+    "prefix": "hp-state",
+    "description": "Hapi.js Server State",
+    "body": "server.state('${name}', {$0});"
   },
   "server route": {
     "prefix": "hp-route",
