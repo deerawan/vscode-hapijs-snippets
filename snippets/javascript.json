@@ -7,7 +7,7 @@
   "new": {
     "prefix": "hp-new",
     "description": "Hapi.js new",
-    "body": "const server = new Hapi.Server();"
+    "body": "const server = new Hapi.Server($1);"
   },
   "server connection": {
     "prefix": "hp-conn",
@@ -19,12 +19,26 @@
       "});"
     ]
   },
+  "server decorate": {
+    "prefix": "hp-decor",
+    "description": "Hapi.js Server Decorate",
+    "body": "server.decorate('${type}', ${property}, ${method});"
+  },
   "server ext": {
     "prefix": "hp-ext",
     "description": "Hapi.js Server Extension",
     "body": [
       "server.ext('${event}', (request, reply) => {",
       "\treply.continue();",
+      "});"
+    ]
+  },
+  "server handler": {
+    "prefix": "hp-handler",
+    "description": "Hapi.js Server Handler",
+    "body": [
+      "server.handler('${name}', (route, options) => {",
+      "\t${1}",
       "});"
     ]
   },
