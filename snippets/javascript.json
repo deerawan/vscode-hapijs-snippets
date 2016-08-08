@@ -42,6 +42,34 @@
       "});"
     ]
   },
+  "server inject": {
+    "prefix": "hpinject",
+    "description": "Hapi.js Server Inject",
+    "body": [
+      "server.inject(${options}, (res) => {",
+      "\t${1}",
+      "});"
+    ]
+  },
+  "server initialize": {
+    "prefix": "hpinitialize",
+    "description": "Hapi.js Server Initialize",
+    "body": [
+      "server.initialize((err) => {",
+      "\t${1}",
+      "});"
+    ]
+  },
+  "server log": {
+    "prefix": "hplog",
+    "description": "Hapi.js Server Log",
+    "body": "server.log(${tags}, ${data});"
+  },
+  "server lookup": {
+    "prefix": "hplookup",
+    "description": "Hapi.js Server Lookup",
+    "body": "server.lookup(${id});"
+  },
   "server method": {
     "prefix": "hp-meth",
     "description": "Hapi.js Server Methods",
@@ -100,7 +128,7 @@
     ]
   },
   "server views": {
-    "prefix": "hp-view",
+    "prefix": "hp-views",
     "description": "Hapi.js Views",
     "body": [
       "server.views({",
