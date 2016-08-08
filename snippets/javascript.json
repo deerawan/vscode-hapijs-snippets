@@ -70,6 +70,11 @@
     "description": "Hapi.js Server Lookup",
     "body": "server.lookup(${id});"
   },
+  "server match": {
+    "prefix": "hpmatch",
+    "description": "Hapi.js Server Match",
+    "body": "server.match('${method}', '${path}');"
+  },
   "server method": {
     "prefix": "hp-meth",
     "description": "Hapi.js Server Methods",
@@ -91,6 +96,18 @@
     "prefix": "hp-state",
     "description": "Hapi.js Server State",
     "body": "server.state('${name}', {$0});"
+  },
+  "server stop": {
+    "prefix": "hpstop",
+    "description": "Hapi.js Server Stop",
+    "body": [
+      "server.stop({ timeout: ${timeout} }, (err) => {",
+      "\tif (err) {",
+      "\t\tthrow err;",
+      "\t}",
+      "\tconsole.log('Server stopped');",
+      "});"
+    ]
   },
   "server route": {
     "prefix": "hp-route",
