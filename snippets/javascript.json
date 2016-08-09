@@ -1,16 +1,16 @@
 {
   "require": {
-    "prefix": "hp-req",
+    "prefix": "hpreq",
     "description": "Hapi.js Require",
     "body": "const Hapi = require('hapi');"
   },
   "new": {
-    "prefix": "hp-new",
+    "prefix": "hpnew",
     "description": "Hapi.js new",
     "body": "const server = new Hapi.Server($1);"
   },
   "server connection": {
-    "prefix": "hp-conn",
+    "prefix": "hpconn",
     "description": "Hapi.js Server Connection",
     "body": [
       "server.connection({",
@@ -20,12 +20,12 @@
     ]
   },
   "server decorate": {
-    "prefix": "hp-decor",
+    "prefix": "hpdecor",
     "description": "Hapi.js Server Decorate",
     "body": "server.decorate('${type}', ${property}, ${method});"
   },
   "server ext": {
-    "prefix": "hp-ext",
+    "prefix": "hpext",
     "description": "Hapi.js Server Extension",
     "body": [
       "server.ext('${event}', (request, reply) => {",
@@ -34,7 +34,7 @@
     ]
   },
   "server handler": {
-    "prefix": "hp-handler",
+    "prefix": "hphandler",
     "description": "Hapi.js Server Handler",
     "body": [
       "server.handler('${name}', (route, options) => {",
@@ -76,12 +76,12 @@
     "body": "server.match('${method}', '${path}');"
   },
   "server method": {
-    "prefix": "hp-meth",
+    "prefix": "hpmethod",
     "description": "Hapi.js Server Methods",
-    "body": "server.method('${name}', ${method}, {});"
+    "body": "server.method('${name}', ${method}, {${1}});"
   },
   "server start": {
-    "prefix": "hp-start",
+    "prefix": "hpstart",
     "description": "Hapi.js Server Start",
     "body": [
       "server.start((err) => {",
@@ -110,7 +110,7 @@
     ]
   },
   "server route": {
-    "prefix": "hp-route",
+    "prefix": "hproute",
     "description": "Hapi.js Server Route",
     "body": [
       "server.route({",
