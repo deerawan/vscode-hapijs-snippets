@@ -31,6 +31,6 @@ Type part of a snippet, press `enter` or `tab`
 | `hproute`                  | server route |
 | `hpnew`                    | create new server |
 | `hpreg`                    | register one plugin |
-| `hpreg:multi`              | register two plugins |
+| `hpregmulti`               | register two plugins |
 | `hpviews`                  | views |
 

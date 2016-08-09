@@ -135,7 +135,7 @@
     ]
   },
   "server register multiple plugin": {
-    "prefix": "hpreg:multi",
+    "prefix": "hpregmulti",
     "description": "Hapi.js Load Multiple Plugin",
     "body": [
       "server.register([require('${plugin1}'), require('${plugin2}')], (err) => {",
