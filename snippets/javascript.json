@@ -29,7 +29,8 @@
     "description": "Hapi.js Server Extension",
     "body": [
       "server.ext('${event}', (request, reply) => {",
-      "\treply.continue();",
+      "\t${1}",
+      "\treturn reply.continue();",
       "});"
     ]
   },
@@ -52,7 +53,7 @@
     ]
   },
   "server initialize": {
-    "prefix": "hpinitialize",
+    "prefix": "hpinit",
     "description": "Hapi.js Server Initialize",
     "body": [
       "server.initialize((err) => {",
@@ -93,7 +94,7 @@
     ]
   },
   "server state": {
-    "prefix": "hp-state",
+    "prefix": "hpstate",
     "description": "Hapi.js Server State",
     "body": "server.state('${name}', {$0});"
   },
@@ -123,7 +124,7 @@
     ]
   },
   "server register one plugin": {
-    "prefix": "hp-plug-one",
+    "prefix": "hpreg",
     "description": "Hapi.js Load One Plugin",
     "body": [
       "server.register(require('${plugin}'), (err) => {",
@@ -134,7 +135,7 @@
     ]
   },
   "server register multiple plugin": {
-    "prefix": "hp-plug-multi",
+    "prefix": "hpreg:multi",
     "description": "Hapi.js Load Multiple Plugin",
     "body": [
       "server.register([require('${plugin1}'), require('${plugin2}')], (err) => {",
@@ -145,7 +146,7 @@
     ]
   },
   "server views": {
-    "prefix": "hp-views",
+    "prefix": "hpviews",
     "description": "Hapi.js Views",
     "body": [
       "server.views({",

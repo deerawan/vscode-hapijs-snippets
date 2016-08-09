@@ -17,18 +17,20 @@ Type part of a snippet, press `enter` or `tab`
 | `hpreq`                    | require hapi |
 | `hpconn`                   | connection |
 | `hpdecor`                  | server decorate  |
-| `hpext`                    | extension |
+| `hpext`                    | server extension |
 | `hphandler`                | server handler |
 | `hpinject`                 | server inject |
+| `hpinit`                   | server initialize |
 | `hplog`                    | server log |
 | `hplookup`                 | server lookup |
 | `hpmatch`                  | server match |
+| `hpmethod`                 | server method |
 | `hpstart`                  | server start |
 | `hpstate`                  | server state |
 | `hpstop`                   | server stop |
 | `hproute`                  | server route |
 | `hpnew`                    | create new server |
-| `hp-plug-one`              | register one plugin |
-| `hp-plug-multi`            | register two plugins |
-| `hp-view`                  | views |
+| `hpreg`                    | register one plugin |
+| `hpreg:multi`              | register two plugins |
+| `hpviews`                  | views |
 
