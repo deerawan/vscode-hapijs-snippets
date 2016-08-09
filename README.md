@@ -12,15 +12,23 @@ Type `cmd-shift-p`/`ctrl-shift-p` to launch command palette and choose `Extensio
 Type part of a snippet, press `enter` or `tab`
 
 ## ES6 Snippets
-| Trigger                     | Description |
-| -------                     | ----------- |
-| `hp-req`                    | require hapi |
-| `hp-new`                    | create new server |
-| `hp-conn`                   | connection |
-| `hp-ext`                    | extension |
-| `hp-start`                  | start |
-| `hp-route`                  | route |
-| `hp-plug-one`               | register one plugin |
-| `hp-plug-multi`             | register two plugins |
-| `hp-view`                   | views |
+| Trigger                    | Description |
+| -------                    | ----------- |
+| `hpreq`                    | require hapi |
+| `hpconn`                   | connection |
+| `hpdecor`                  | server decorate  |
+| `hpext`                    | extension |
+| `hphandler`                | server handler |
+| `hpinject`                 | server inject |
+| `hplog`                    | server log |
+| `hplookup`                 | server lookup |
+| `hpmatch`                  | server match |
+| `hpstart`                  | server start |
+| `hpstate`                  | server state |
+| `hpstop`                   | server stop |
+| `hproute`                  | server route |
+| `hpnew`                    | create new server |
+| `hp-plug-one`              | register one plugin |
+| `hp-plug-multi`            | register two plugins |
+| `hp-view`                  | views |
 
