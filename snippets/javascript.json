@@ -9,6 +9,19 @@
     "description": "Hapi.js new",
     "body": "const server = new Hapi.Server($1);"
   },
+  "plugin": {
+    "prefix": "hpplugin",
+    "description": "Hapi.js Server Plugin",
+    "body": [
+        "const register = (server, options, next) => {",
+        "\treturn next();",
+        "};",
+        "",
+        "register.attributes = {",
+        "\tname: '${plugin}'",
+        "};"
+    ]
+  },
   "server connection": {
     "prefix": "hpconn",
     "description": "Hapi.js Server Connection",
