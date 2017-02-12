@@ -16,6 +16,7 @@ Type part of a snippet, press `enter` or `tab`
 | -------                    | ----------- |
 | `hpreq`                    | require hapi |
 | `hpconn`                   | connection |
+| `hpplugin`                 | hapi plugin |
 | `hpdecor`                  | server decorate  |
 | `hpext`                    | server extension |
 | `hphandler`                | server handler |
