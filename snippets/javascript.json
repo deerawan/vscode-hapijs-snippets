@@ -7,29 +7,21 @@
   "new": {
     "prefix": "hpnew",
     "description": "Hapi.js new",
-    "body": "const server = new Hapi.Server($1);"
+    "body": [
+      "const server = Hapi.Server({",
+      "\thost: '${host}',",
+      "\tport: ${port}",
+      "});"
+    ]
   },
   "plugin": {
     "prefix": "hpplugin",
     "description": "Hapi.js Server Plugin",
     "body": [
-        "const register = (server, options, next) => {",
-        "\treturn next();",
-        "};",
-        "",
-        "register.attributes = {",
-        "\tname: '${plugin}'",
-        "};"
-    ]
-  },
-  "server connection": {
-    "prefix": "hpconn",
-    "description": "Hapi.js Server Connection",
-    "body": [
-      "server.connection({",
-      "\thost: '${host}',",
-      "\tport: ${port}",
-      "});"
+        "await server.register({",
+        "\tplugin: require('${plugin}'),",
+        "\toptions: {}",
+        "});"
     ]
   },
   "server decorate": {
@@ -41,18 +33,11 @@
     "prefix": "hpext",
     "description": "Hapi.js Server Extension",
     "body": [
-      "server.ext('${event}', (request, reply) => {",
-      "\t${1}",
-      "\treturn reply.continue();",
-      "});"
-    ]
-  },
-  "server handler": {
-    "prefix": "hphandler",
-    "description": "Hapi.js Server Handler",
-    "body": [
-      "server.handler('${name}', (route, options) => {",
-      "\t${1}",
+      "server.ext({",
+      "\ttype: '${event}',",
+      "\tmethod: (request, reply) => {",
+      "\t\treturn reply.continue;",
+      "\t}",
       "});"
     ]
   },
@@ -60,18 +45,20 @@
     "prefix": "hpinject",
     "description": "Hapi.js Server Inject",
     "body": [
-      "server.inject(${options}, (res) => {",
-      "\t${1}",
-      "});"
+      "const res = await server.inject(${options});",
+      "console.log(res.result);"
     ]
   },
   "server initialize": {
     "prefix": "hpinit",
     "description": "Hapi.js Server Initialize",
     "body": [
-      "server.initialize((err) => {",
-      "\t${1}",
-      "});"
+      "const init = async() => {",
+      "\tawait server.start();",
+      "\tconsole.log(`Server running at: ${server.info.uri}`);",
+      "};",
+      "",
+      "init();"
     ]
   },
   "server log": {
@@ -98,12 +85,16 @@
     "prefix": "hpstart",
     "description": "Hapi.js Server Start",
     "body": [
-      "server.start((err) => {",
-      "\tif (err) {",
-      "\t\tthrow err;",
+      "async function start() {",
+      "\ttry{",
+      "\t\tawait server.start();",
+      "\t} catch(err) {",
+      "\t\tconsole.log(err);",
+      "\t\tprocess.exit(1)",
       "\t}",
       "\tconsole.log('Server running at ' + server.info.uri);",
-      "});"
+      "};",
+      "start()"
     ]
   },
   "server state": {
@@ -115,12 +106,8 @@
     "prefix": "hpstop",
     "description": "Hapi.js Server Stop",
     "body": [
-      "server.stop({ timeout: ${timeout} }, (err) => {",
-      "\tif (err) {",
-      "\t\tthrow err;",
-      "\t}",
-      "\tconsole.log('Server stopped');",
-      "});"
+      "await server.stop({ timeout: ${timeout} });",
+      "console.log('Server stopped');"
     ]
   },
   "server route": {
@@ -128,10 +115,10 @@
     "description": "Hapi.js Server Route",
     "body": [
       "server.route({",
-      "\tpath: '${/path}',",
+      "\tpath: '/path',",
       "\tmethod: '${GET}',",
       "\thandler: (request, reply) => {",
-      "\t\treply(${response});",
+      "\t\treturn reply.response('response').code(200);",
       "\t}",
       "});"
     ]
@@ -140,9 +127,9 @@
     "prefix": "hpreg",
     "description": "Hapi.js Load One Plugin",
     "body": [
-      "server.register(require('${plugin}'), (err) => {",
+      "await server.register(require('${plugin}'), (err)=>{",
       "\tif (err) {",
-      "\t\tconsole.error('Failed to load plugin:', err);",
+      "\t\tconsole.error('Failed to load plugins:', err);",
       "\t}",
       "});"
     ]
@@ -151,7 +138,7 @@
     "prefix": "hpregmulti",
     "description": "Hapi.js Load Multiple Plugin",
     "body": [
-      "server.register([require('${plugin1}'), require('${plugin2}')], (err) => {",
+      "await server.register([require('${plugin1}'), require('${plugin2}')], (err) => {",
       "\tif (err) {",
       "\t\tconsole.error('Failed to load plugins:', err);",
       "\t}",
