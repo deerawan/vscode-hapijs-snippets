@@ -1,6 +1,6 @@
 {
   "name": "vscode-hapijs-snippets",
-  "publisher": "deerawan, siddharth",
+  "publisher": "deerawan",
   "version": "3.0.0",
   "displayName": "Hapi.js Snippets",
   "description": "Hapi.js Snippets for Javascript ES6",

@@ -35,8 +35,9 @@
     "body": [
       "server.ext({",
       "\ttype: '${event}',",
-      "\tmethod: (request, reply) => {",
-      "\t\treturn reply.continue;",
+      "\tmethod: function (request, h) {",
+      "\t\trequest.setUrl('/test');",
+      "\t\treturn h.continue;",
       "\t}",
       "});"
     ]
@@ -53,12 +54,8 @@
     "prefix": "hpinit",
     "description": "Hapi.js Server Initialize",
     "body": [
-      "const init = async() => {",
-      "\tawait server.start();",
-      "\tconsole.log(`Server running at: ${server.info.uri}`);",
-      "};",
-      "",
-      "init();"
+      "const server = Hapi.server({ port: ${port});",
+      "await server.initialize();"
     ]
   },
   "server log": {
@@ -115,10 +112,10 @@
     "description": "Hapi.js Server Route",
     "body": [
       "server.route({",
-      "\tpath: '/path',",
+      "\tpath: '${/path}',",
       "\tmethod: '${GET}',",
-      "\thandler: (request, reply) => {",
-      "\t\treturn reply.response('response').code(200);",
+      "\thandler: (request, h) => {",
+      "\t\treturn h.response('response').code(200);",
       "\t}",
       "});"
     ]
@@ -127,9 +124,9 @@
     "prefix": "hpreg",
     "description": "Hapi.js Load One Plugin",
     "body": [
-      "await server.register(require('${plugin}'), (err)=>{",
+      "await server.register(require('${plugin}'), (err) => {",
       "\tif (err) {",
-      "\t\tconsole.error('Failed to load plugins:', err);",
+      "\t\tconsole.error('Failed to load plugin:', err);",
       "\t}",
       "});"
     ]
