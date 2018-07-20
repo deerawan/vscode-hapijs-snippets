@@ -1,0 +1,22 @@
+{
+  "projectName": "vscode-hapijs-snippets",
+  "projectOwner": "deerawan",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "deerawan",
+      "name": "Budi Irawan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1243921?v=4",
+      "profile": "http://budiirawan.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}

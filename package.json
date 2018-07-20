@@ -17,7 +17,9 @@
   "engines": {
     "vscode": "0.10.x"
   },
-  "categories": ["Snippets"],
+  "categories": [
+    "Snippets"
+  ],
   "contributes": {
     "snippets": [
       {
@@ -25,5 +27,12 @@
         "path": "./snippets/javascript.json"
       }
     ]
+  },
+  "devDependencies": {
+    "all-contributors-cli": "^5.3.0"
+  },
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   }
 }
