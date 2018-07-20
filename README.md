@@ -1,5 +1,4 @@
 # Hapi.js Snippets for Visual Studio Code
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 Hapi.js Snippets for Javascript ES6 in Visual Studio Code
 
 ![Hapijs Logo](https://github.com/deerawan/vscode-hapijs-snippets/raw/master/images/hapijs-logo.png)
@@ -39,7 +38,7 @@ Type part of a snippet, press `enter` or `tab`
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
