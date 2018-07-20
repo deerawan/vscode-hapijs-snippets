@@ -1,4 +1,5 @@
 # Hapi.js Snippets for Visual Studio Code
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 Hapi.js Snippets for Javascript ES6 in Visual Studio Code
 
 ![Hapijs Logo](https://github.com/deerawan/vscode-hapijs-snippets/raw/master/images/hapijs-logo.png)
@@ -35,3 +36,15 @@ Type part of a snippet, press `enter` or `tab`
 | `hpregmulti`               | register two plugins |
 | `hpviews`                  | views |
 
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars1.githubusercontent.com/u/1243921?v=4" width="100px;"/><br /><sub><b>Budi Irawan</b></sub>](http://budiirawan.com)<br />[💻](https://github.com/deerawan/vscode-hapijs-snippets/commits?author=deerawan "Code") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
