@@ -1,3 +1,6 @@
+## v3.0.0
+update for Hapijs v17. Thanks to @siddharth-lakhara
+
 ## v2.0.0
 - add new prefix: decorate, log, stop, etc
 - remove "-" in prefix
